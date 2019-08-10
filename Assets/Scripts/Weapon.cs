@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +14,8 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] Camera FPCamera;
     [SerializeField] float range = 100f;
+    [SerializeField] float damage = 31f;
+    [SerializeField] GameObject hitEffect;
 
 
     public float shotPower = 100f;
@@ -34,16 +37,12 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
-        RaycastHit hit;
-        Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range);
-        Debug.Log("I hit: " + hit.transform.name);
+        PlayMuzzleFlash();
+        ProcessRaycast();
 
         //GameObject bullet;
         //bullet = Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation);
         //bullet.GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shotPower);
-
-        //GameObject tempFlash;
-        //tempFlash = Instantiate(muzzleFlashPrefab, barrelLocation.position, barrelLocation.rotation);
 
         //CasingRelease();
         //Destroy(tempFlash, 0.5f);
@@ -51,13 +50,39 @@ public class Weapon : MonoBehaviour
 
     }
 
+    private void PlayMuzzleFlash()
+    {
+        GameObject flash = Instantiate(muzzleFlashPrefab, barrelLocation.position, barrelLocation.rotation);
+        Destroy(flash, 0.2f);
+    }
+
+    private void ProcessRaycast()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range))
+        {
+            CreateHitImpact(hit);
+            EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
+            if (target == null) { return; }
+            // call a method on enemyhealth that decreases enemy health
+            target.TakeDamage(damage);
+        }
+        else { return; }
+    }
+
+    private void CreateHitImpact(RaycastHit hit)
+    {
+        GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        Destroy(impact, .1f);
+    }
+
     //void CasingRelease()
     //{
-        //GameObject casing;
-        //casing = Instantiate(casingPrefab, casingExitLocation.position, casingExitLocation.rotation) as GameObject;
-        //casing.GetComponent<Rigidbody>().AddExplosionForce(550f, (casingExitLocation.position - casingExitLocation.right * 0.3f - casingExitLocation.up * 0.6f), 1f);
-        //casing.GetComponent<Rigidbody>().AddTorque(new Vector3(0, Random.Range(100f, 500f), Random.Range(10f, 1000f)), ForceMode.Impulse);
-        //Destroy(casing, 1f);
+    //GameObject casing;
+    //casing = Instantiate(casingPrefab, casingExitLocation.position, casingExitLocation.rotation) as GameObject;
+    //casing.GetComponent<Rigidbody>().AddExplosionForce(550f, (casingExitLocation.position - casingExitLocation.right * 0.3f - casingExitLocation.up * 0.6f), 1f);
+    //casing.GetComponent<Rigidbody>().AddTorque(new Vector3(0, Random.Range(100f, 500f), Random.Range(10f, 1000f)), ForceMode.Impulse);
+    //Destroy(casing, 1f);
     //}
 
 

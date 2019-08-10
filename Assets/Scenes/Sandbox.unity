@@ -175,6 +175,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 659817744559176358, guid: c6453f8e1f814744d8b94e5a6d1f9942,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 712923562133791708, guid: c6453f8e1f814744d8b94e5a6d1f9942,
         type: 3}
       propertyPath: m_Enabled
@@ -1471,6 +1476,9 @@ MonoBehaviour:
   casingExitLocation: {fileID: 1189695769}
   FPCamera: {fileID: 596984137}
   range: 100
+  damage: 31
+  hitEffect: {fileID: 1398255030022564583, guid: 007792af5bee6844c9f0ee1304930779,
+    type: 3}
   shotPower: 100
 --- !u!1001 &1405376241
 PrefabInstance:
