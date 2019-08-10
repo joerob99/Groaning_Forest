@@ -30,8 +30,8 @@ public class Weapon : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            //GetComponent<Animator>().SetTrigger("Fire");
-            Shoot();
+            GetComponent<Animator>().SetTrigger("Fire");
+            //Shoot();
         }
     }
 
@@ -40,13 +40,11 @@ public class Weapon : MonoBehaviour
         PlayMuzzleFlash();
         ProcessRaycast();
 
-        //GameObject bullet;
-        //bullet = Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation);
-        //bullet.GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shotPower);
-
-        //CasingRelease();
+        GameObject bullet;
+        bullet = Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation);
+        bullet.GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shotPower);
         //Destroy(tempFlash, 0.5f);
-        //Destroy(bullet, 1f);
+        Destroy(bullet, 1f);
 
     }
 
@@ -76,14 +74,14 @@ public class Weapon : MonoBehaviour
         Destroy(impact, .1f);
     }
 
-    //void CasingRelease()
-    //{
-    //GameObject casing;
-    //casing = Instantiate(casingPrefab, casingExitLocation.position, casingExitLocation.rotation) as GameObject;
-    //casing.GetComponent<Rigidbody>().AddExplosionForce(550f, (casingExitLocation.position - casingExitLocation.right * 0.3f - casingExitLocation.up * 0.6f), 1f);
-    //casing.GetComponent<Rigidbody>().AddTorque(new Vector3(0, Random.Range(100f, 500f), Random.Range(10f, 1000f)), ForceMode.Impulse);
-    //Destroy(casing, 1f);
-    //}
+    void CasingRelease()
+    {
+        GameObject casing;
+        casing = Instantiate(casingPrefab, casingExitLocation.position, casingExitLocation.rotation) as GameObject;
+        casing.GetComponent<Rigidbody>().AddExplosionForce(550f, (casingExitLocation.position - casingExitLocation.right * 0.3f - casingExitLocation.up * 0.6f), 1f);
+        casing.GetComponent<Rigidbody>().AddTorque(new Vector3(0, UnityEngine.Random.Range(100f, 500f), UnityEngine.Random.Range(10f, 1000f)), ForceMode.Impulse);
+        Destroy(casing, 1f);
+    }
 
 
 }
