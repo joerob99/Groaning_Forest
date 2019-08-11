@@ -418,6 +418,7 @@ GameObject:
   - component: {fileID: 4086005174234542}
   - component: {fileID: 95847998059205920}
   - component: {fileID: 1550373858699127500}
+  - component: {fileID: 1661678417412670463}
   m_Layer: 0
   m_Name: Farm Shotgun
   m_TagString: Untagged
@@ -490,6 +491,24 @@ MonoBehaviour:
   ammoSlot: {fileID: 0}
   ammoType: 2
   shotPower: 10000
+--- !u!114 &1661678417412670463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569160750861012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ed2164fcccb2d84998507510e112b13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
+  zoomedInFOV: 65
+  zoomedOutFOV: 85
+  sensitivityNormal: 2
+  sensitivityZoomed: 1
+  FPSController: {fileID: 0}
 --- !u!1 &1607888903376170
 GameObject:
   m_ObjectHideFlags: 0

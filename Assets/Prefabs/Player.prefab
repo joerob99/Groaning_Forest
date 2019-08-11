@@ -465,6 +465,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1192734824172888080, guid: fc89912481daf614d9ffef21aa6cfbac,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 2000000}
+    - target: {fileID: 1192734824172888080, guid: fc89912481daf614d9ffef21aa6cfbac,
+        type: 3}
+      propertyPath: FPSController
+      value: 
+      objectReference: {fileID: 11400004}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc89912481daf614d9ffef21aa6cfbac, type: 3}
 --- !u!4 &810777160319114351 stripped
@@ -655,6 +665,16 @@ PrefabInstance:
       propertyPath: ammoSlot
       value: 
       objectReference: {fileID: 7878848}
+    - target: {fileID: 1661678417412670463, guid: 220b91db296be924b99d0323569a1129,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 2000000}
+    - target: {fileID: 1661678417412670463, guid: 220b91db296be924b99d0323569a1129,
+        type: 3}
+      propertyPath: FPSController
+      value: 
+      objectReference: {fileID: 11400004}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 220b91db296be924b99d0323569a1129, type: 3}
 --- !u!4 &6580144677511407485 stripped

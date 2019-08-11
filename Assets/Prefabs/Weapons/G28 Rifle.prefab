@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
-  zoomedInFOV: 55
+  zoomedInFOV: 35
   zoomedOutFOV: 85
   sensitivityNormal: 2
   sensitivityZoomed: 1
