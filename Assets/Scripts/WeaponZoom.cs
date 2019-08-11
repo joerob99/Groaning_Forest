@@ -13,12 +13,7 @@ public class WeaponZoom : MonoBehaviour
 
     bool isZoomed = false;
 
-    private RigidbodyFirstPersonController FPSController;
-
-    void Start()
-    {
-        FPSController = GetComponent<RigidbodyFirstPersonController>();
-    }
+    [SerializeField] RigidbodyFirstPersonController FPSController;
 
     // Update is called once per frame
     void Update()

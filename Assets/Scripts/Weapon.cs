@@ -29,7 +29,7 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetMouseButtonDown(0))
         {
             GetComponent<Animator>().SetTrigger("Fire");
             //Shoot();
