@@ -417,7 +417,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4086005174234542}
   - component: {fileID: 95847998059205920}
-  - component: {fileID: 114966803654839386}
+  - component: {fileID: 1550373858699127500}
   m_Layer: 0
   m_Name: M1911 Steel
   m_TagString: Untagged
@@ -461,7 +461,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114966803654839386
+--- !u!114 &1550373858699127500
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -470,7 +470,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1569160750861012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6be84e4d7829855419c06b94e56bd135, type: 3}
+  m_Script: {fileID: 11500000, guid: 01cabe3d3dc931444add2f9d84e4f6a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1900734910723676, guid: 67c3c990b6c48af469e31db314977502,
@@ -481,7 +481,13 @@ MonoBehaviour:
     type: 3}
   barrelLocation: {fileID: 4493519541437738}
   casingExitLocation: {fileID: 4123556266775812}
-  shotPower: 750
+  FPCamera: {fileID: 0}
+  range: 100
+  damage: 31
+  hitEffect: {fileID: 1398255030022564583, guid: 007792af5bee6844c9f0ee1304930779,
+    type: 3}
+  ammoSlot: {fileID: 0}
+  shotPower: 10000
 --- !u!1 &1607888903376170
 GameObject:
   m_ObjectHideFlags: 0
