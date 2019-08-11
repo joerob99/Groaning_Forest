@@ -16,6 +16,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] float range = 100f;
     [SerializeField] float damage = 31f;
     [SerializeField] GameObject hitEffect;
+    [SerializeField] Ammo ammoSlot;
 
 
     public float shotPower = 100f;
@@ -37,15 +38,20 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
-        PlayMuzzleFlash();
-        ProcessRaycast();
+        if (ammoSlot.GetCurrentAmmo() > 0) {
+            PlayMuzzleFlash();
+            ProcessRaycast();
+            ShowBullet();
+            ammoSlot.ReduceCurrentAmmo();
+        }
+    }
 
+    private void ShowBullet()
+    {
         GameObject bullet;
         bullet = Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation);
         bullet.GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shotPower);
-        //Destroy(tempFlash, 0.5f);
         Destroy(bullet, 1f);
-
     }
 
     private void PlayMuzzleFlash()
@@ -80,7 +86,7 @@ public class Weapon : MonoBehaviour
         casing = Instantiate(casingPrefab, casingExitLocation.position, casingExitLocation.rotation) as GameObject;
         casing.GetComponent<Rigidbody>().AddExplosionForce(550f, (casingExitLocation.position - casingExitLocation.right * 0.3f - casingExitLocation.up * 0.6f), 1f);
         casing.GetComponent<Rigidbody>().AddTorque(new Vector3(0, UnityEngine.Random.Range(100f, 500f), UnityEngine.Random.Range(10f, 1000f)), ForceMode.Impulse);
-        Destroy(casing, 1f);
+        Destroy(casing, 0.75f);
     }
 
 

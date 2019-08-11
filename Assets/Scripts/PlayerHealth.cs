@@ -9,6 +9,6 @@ public class PlayerHealth : MonoBehaviour
     public void LoseHealth(float damage)
     {
         playerHealth -= damage;
-        if (playerHealth <= 0f) { print("Deaded..."); }
+        if (playerHealth <= 0f) { GetComponent<DeathHandler>().HandleDeath(); }
     }
 }
