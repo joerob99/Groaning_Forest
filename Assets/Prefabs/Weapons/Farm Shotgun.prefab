@@ -488,6 +488,7 @@ MonoBehaviour:
   hitEffect: {fileID: 1398255030022564583, guid: 007792af5bee6844c9f0ee1304930779,
     type: 3}
   ammoSlot: {fileID: 0}
+  ammoType: 2
   shotPower: 10000
 --- !u!1 &1607888903376170
 GameObject:

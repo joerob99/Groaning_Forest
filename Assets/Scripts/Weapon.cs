@@ -17,6 +17,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] float damage = 31f;
     [SerializeField] GameObject hitEffect;
     [SerializeField] Ammo ammoSlot;
+    [SerializeField] AmmoType ammoType;
 
 
     public float shotPower = 100f;
@@ -38,11 +39,11 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
-        if (ammoSlot.GetCurrentAmmo() > 0) {
+        if (ammoSlot.GetCurrentAmmo(ammoType) > 0) {
             PlayMuzzleFlash();
             ProcessRaycast();
             ShowBullet();
-            ammoSlot.ReduceCurrentAmmo();
+            ammoSlot.ReduceCurrentAmmo(ammoType);
         }
     }
 
