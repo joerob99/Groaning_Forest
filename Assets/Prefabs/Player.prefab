@@ -352,6 +352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7603823366613821918}
+  - component: {fileID: 6272628054951564801}
   m_Layer: 0
   m_Name: Weapons
   m_TagString: Untagged
@@ -376,24 +377,19 @@ Transform:
   m_Father: {fileID: 400000}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1109479650796050925
+--- !u!114 &6272628054951564801
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6119012736381335744}
+  m_GameObject: {fileID: 5538976735210816944}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ed2164fcccb2d84998507510e112b13, type: 3}
+  m_Script: {fileID: 11500000, guid: be3ed03dba36753449a815c1dd9b500f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 2000000}
-  zoomedInFOV: 55
-  zoomedOutFOV: 85
-  sensitivityNormal: 2
-  sensitivityZoomed: 1
-  FPSController: {fileID: 11400004}
+  currentWeapon: 0
 --- !u!1001 &814854368836186561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -565,15 +561,19 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8968989343643398093, guid: 7b6036a638146644db0ec2282c5042b8,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 2000000}
+    - target: {fileID: 8968989343643398093, guid: 7b6036a638146644db0ec2282c5042b8,
+        type: 3}
+      propertyPath: FPSController
+      value: 
+      objectReference: {fileID: 11400004}
     m_RemovedComponents:
     - {fileID: 6088942471761739238, guid: 7b6036a638146644db0ec2282c5042b8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7b6036a638146644db0ec2282c5042b8, type: 3}
---- !u!1 &6119012736381335744 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1569160750861012, guid: 7b6036a638146644db0ec2282c5042b8,
-    type: 3}
-  m_PrefabInstance: {fileID: 6119981282999874068}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6115904505118384058 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4086005174234542, guid: 7b6036a638146644db0ec2282c5042b8,
@@ -590,6 +590,10 @@ PrefabInstance:
     - target: {fileID: 1569160750861012, guid: 220b91db296be924b99d0323569a1129, type: 3}
       propertyPath: m_Name
       value: Farm Shotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 1569160750861012, guid: 220b91db296be924b99d0323569a1129, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4086005174234542, guid: 220b91db296be924b99d0323569a1129, type: 3}
       propertyPath: m_LocalPosition.x

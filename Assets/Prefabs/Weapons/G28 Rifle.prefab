@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 4086005174234542}
   - component: {fileID: 95847998059205920}
   - component: {fileID: 1550373858699127500}
-  - component: {fileID: 6088942471761739238}
+  - component: {fileID: 8968989343643398093}
   m_Layer: 0
   m_Name: G28 Rifle
   m_TagString: Untagged
@@ -490,7 +490,7 @@ MonoBehaviour:
     type: 3}
   ammoSlot: {fileID: 0}
   shotPower: 10000
---- !u!114 &6088942471761739238
+--- !u!114 &8968989343643398093
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
