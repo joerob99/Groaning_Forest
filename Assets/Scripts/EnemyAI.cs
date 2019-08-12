@@ -8,18 +8,25 @@ public class EnemyAI : MonoBehaviour
 {
     [SerializeField] Transform target;
     [SerializeField] float chaseRange = 8f;
-    //[SerializeField] float turnSpeed = 5f;
+    [SerializeField] float turnSpeed = 5f;
     NavMeshAgent navMeshAgent;
     float distToTarget = Mathf.Infinity;
     bool isProvoked = false;
+    EnemyHealth health;
 
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        health = GetComponent<EnemyHealth>();
     }
 
     void Update()
     {
+        if (health.IsDead())
+        {
+            enabled = false;
+            navMeshAgent.enabled = false;
+        }
         distToTarget = Vector3.Distance(target.position, transform.position);
         if (isProvoked)
         {
@@ -58,16 +65,16 @@ public class EnemyAI : MonoBehaviour
 
     private void AttackTarget()
     {
-        transform.LookAt(target);
+        FaceTarget();
         GetComponent<Animator>().SetBool("attack", true);
     }
-
-    //private void FaceTarget()
-    //{
-        //Vector3 direction = (target.position - target.position).normalized;
-        //Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x + 0.001f, 0, direction.z));
-        //transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed);
-    //}
+    
+    private void FaceTarget()
+    {
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed);
+    }
 
     void OnDrawGizmosSelected()
     {
