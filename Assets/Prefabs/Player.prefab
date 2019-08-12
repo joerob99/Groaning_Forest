@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 7878848}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -587,8 +587,7 @@ PrefabInstance:
       propertyPath: FPSController
       value: 
       objectReference: {fileID: 11400004}
-    m_RemovedComponents:
-    - {fileID: 6088942471761739238, guid: 7b6036a638146644db0ec2282c5042b8, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b6036a638146644db0ec2282c5042b8, type: 3}
 --- !u!4 &6115904505118384058 stripped
 Transform:
