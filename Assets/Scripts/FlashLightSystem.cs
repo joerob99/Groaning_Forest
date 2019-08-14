@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class FlashLightSystem : MonoBehaviour
 {
-    [SerializeField] float lightDecay = 0.08f;
+    [SerializeField] float lightDecay = 1f;
     [SerializeField] float angleDecay = 0.01f;
     [SerializeField] float minimumAngle = 70f;
     [SerializeField] TextMeshProUGUI batteryText;

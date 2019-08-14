@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 6994225183445120280}
   - component: {fileID: 2745542973837699870}
   - component: {fileID: 7878848}
+  - component: {fileID: 1336859271}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -320,6 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 100
+  healthText: {fileID: 0}
 --- !u!114 &2745542973837699870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,6 +354,20 @@ MonoBehaviour:
     ammoAmount: 10
   - ammoType: 2
     ammoAmount: 5
+--- !u!114 &1336859271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72bbc8931da9428419bc2466c4c1ccaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slashCanvas: {fileID: 0}
+  slashTime: 0.3
 --- !u!1 &2731539312314473516
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,10 +516,6 @@ PrefabInstance:
     - target: {fileID: 1569160750861012, guid: fc89912481daf614d9ffef21aa6cfbac, type: 3}
       propertyPath: m_Name
       value: M1911 Steel
-      objectReference: {fileID: 0}
-    - target: {fileID: 1569160750861012, guid: fc89912481daf614d9ffef21aa6cfbac, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4086005174234542, guid: fc89912481daf614d9ffef21aa6cfbac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -663,10 +675,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: G28 Rifle
       objectReference: {fileID: 0}
-    - target: {fileID: 1569160750861012, guid: 7b6036a638146644db0ec2282c5042b8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4086005174234542, guid: 7b6036a638146644db0ec2282c5042b8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.486
@@ -774,10 +782,6 @@ PrefabInstance:
     - target: {fileID: 1569160750861012, guid: 220b91db296be924b99d0323569a1129, type: 3}
       propertyPath: m_Name
       value: Farm Shotgun
-      objectReference: {fileID: 0}
-    - target: {fileID: 1569160750861012, guid: 220b91db296be924b99d0323569a1129, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4086005174234542, guid: 220b91db296be924b99d0323569a1129, type: 3}
       propertyPath: m_LocalPosition.x
@@ -917,6 +921,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7130440952302159222, guid: 1b1c73d5f7a657447b46d7080b37b576,
+        type: 3}
+      propertyPath: lightDecay
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b1c73d5f7a657447b46d7080b37b576, type: 3}
