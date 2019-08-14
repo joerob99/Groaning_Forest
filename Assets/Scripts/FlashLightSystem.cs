@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class FlashLightSystem : MonoBehaviour
 {
-    [SerializeField] float lightDecay = 0.01f;
+    [SerializeField] float lightDecay = 0.08f;
     [SerializeField] float angleDecay = 0.01f;
     [SerializeField] float minimumAngle = 70f;
+    [SerializeField] TextMeshProUGUI batteryText;
 
     Light myLight;
 
@@ -17,8 +19,14 @@ public class FlashLightSystem : MonoBehaviour
     }
     void Update()
     {
+        DisplayBattery();
         DecreaseLightAngle();
         DecreaseLightIntensity();
+    }
+
+    private void DisplayBattery()
+    {
+        batteryText.text = ((int)((myLight.intensity / 7.5f) * 100)).ToString(); // Finds the battery % using a conversion formula and then converts to int
     }
 
     public void RestoreLightAngle(float restoreAngle) { myLight.spotAngle = restoreAngle; }

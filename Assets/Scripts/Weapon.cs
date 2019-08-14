@@ -33,7 +33,7 @@ public class Weapon : MonoBehaviour
     void Update()
     {
         DisplayAmmo();
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && ammoSlot.GetCurrentAmmo(ammoType) > 0) // If left clicked and ammo > 0, shoot
         {
             GetComponent<Animator>().SetTrigger("Fire");
             //Shoot();
