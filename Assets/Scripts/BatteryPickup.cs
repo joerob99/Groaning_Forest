@@ -6,6 +6,7 @@ public class BatteryPickup : MonoBehaviour
 {
     [SerializeField] float restoreAngle = 80f;
     [SerializeField] float intensityAmount = 7.5f;
+    [SerializeField] float rotationSpeed = 200f;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,5 +17,10 @@ public class BatteryPickup : MonoBehaviour
             current.RestoreLightIntensity(intensityAmount);
             Destroy(gameObject);
         }
+    }
+
+    private void Update() // Used primarily to rotate the battery object
+    {
+        transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
     }
 }
