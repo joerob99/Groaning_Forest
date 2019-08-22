@@ -10,18 +10,27 @@ public class FlashLightSystem : MonoBehaviour
     [SerializeField] float angleDecay = 0.01f;
     [SerializeField] float minimumAngle = 70f;
     [SerializeField] TextMeshProUGUI batteryText;
+    private bool isOn;
 
     Light myLight;
 
     void Start()
     {
+        isOn = true;
         myLight = GetComponent<Light>();
     }
     void Update()
     {
         DisplayBattery();
-        DecreaseLightAngle();
-        DecreaseLightIntensity();
+        if (Input.GetKeyDown(KeyCode.F)) { ToggleFlashlight(); } // Toggle flashlight if F key is pressed
+        if (isOn) { DecreaseLightAngle(); DecreaseLightIntensity(); } // Decrease light and battery if flashlight is on
+    }
+
+    private void ToggleFlashlight()
+    {
+        isOn = !isOn;
+        if (!isOn) { myLight.enabled = false; }
+        else { myLight.enabled = true; }
     }
 
     private void DisplayBattery()
