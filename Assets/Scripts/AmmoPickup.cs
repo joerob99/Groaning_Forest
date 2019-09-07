@@ -7,11 +7,17 @@ public class AmmoPickup : MonoBehaviour
     [SerializeField] int ammoAmount = 8;
     [SerializeField] float rotateSpeed = 200f;
     [SerializeField] AmmoType ammoType;
+    [SerializeField] AudioClip reload;
+
+    private AudioSource source;
+
+    private void Start() { source = GetComponentInParent<AudioSource>(); }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
+            source.PlayOneShot(reload);
             FindObjectOfType<Ammo>().IncreaseCurrentAmmo(ammoType, ammoAmount);
             Destroy(gameObject);
         }

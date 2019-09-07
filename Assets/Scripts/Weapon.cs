@@ -23,6 +23,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] TextMeshProUGUI ammoText;
 
     [SerializeField] AudioClip shotFired;
+    [SerializeField] AudioClip noAmmo;
 
     public float shotPower = 100f;
 
@@ -52,6 +53,7 @@ public class Weapon : MonoBehaviour
                 waitLeft = waitBetweenShots;
             }
         }
+        else if (Input.GetMouseButtonDown(0) && ammoSlot.GetCurrentAmmo(ammoType) == 0) { source.PlayOneShot(noAmmo); }
     }
 
     private void SetTriggerFire() { GetComponent<Animator>().SetTrigger("Fire"); } // String referenced

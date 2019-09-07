@@ -63,6 +63,7 @@ MonoBehaviour:
   restoreAngle: 80
   intensityAmount: 7.5
   rotationSpeed: 200
+  refill: {fileID: 8300000, guid: 56d41046ecec6c040b9ddd1fb7906f96, type: 3}
 --- !u!1001 &240154191619892274
 PrefabInstance:
   m_ObjectHideFlags: 0

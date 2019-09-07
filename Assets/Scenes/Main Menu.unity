@@ -258,7 +258,7 @@ MonoBehaviour:
 
     Left Click - Shoot
 
-    Right Click - Zoom (ADS)'
+    Right Click - Zoom In'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -327,7 +327,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 20588853}
-    characterCount: 74
+    characterCount: 71
     spriteCount: 0
     spaceCount: 14
     wordCount: 15
@@ -3096,7 +3096,7 @@ GameObject:
   - component: {fileID: 797472495}
   - component: {fileID: 797472494}
   m_Layer: 0
-  m_Name: SFX Box
+  m_Name: Music Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12160,7 +12160,8 @@ MonoBehaviour:
   m_text: 'Groaning Forest Production and Development - Joseph Robinson
 
 
-    All Music and SFX royalty free through Attribution 3.0
+    All Music and SFX either created by Joseph Robinson or free through Attribution
+    3.0 or Public Domain
 
 
     All Assets and Props courtesy of Unity and the Unity Asset Store or other licensed
@@ -12233,12 +12234,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1907041939}
-    characterCount: 246
+    characterCount: 292
     spriteCount: 0
-    spaceCount: 41
-    wordCount: 41
+    spaceCount: 49
+    wordCount: 49
     linkCount: 0
-    lineCount: 6
+    lineCount: 7
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

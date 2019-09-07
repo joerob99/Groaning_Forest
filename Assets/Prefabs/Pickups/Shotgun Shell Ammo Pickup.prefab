@@ -61,7 +61,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoAmount: 5
+  rotateSpeed: 200
   ammoType: 2
+  reload: {fileID: 8300000, guid: ec872ea6ae177cb4d87f71609ddefa70, type: 3}
 --- !u!1001 &1540605558639525769
 PrefabInstance:
   m_ObjectHideFlags: 0
