@@ -489,6 +489,8 @@ MonoBehaviour:
     type: 3}
   ammoSlot: {fileID: 0}
   ammoType: 0
+  ammoText: {fileID: 0}
+  shotFired: {fileID: 8300000, guid: 979de2f72f96b6543bef149231078a3c, type: 3}
   shotPower: 10000
 --- !u!114 &1192734824172888080
 MonoBehaviour:

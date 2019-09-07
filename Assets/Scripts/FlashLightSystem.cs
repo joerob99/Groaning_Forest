@@ -10,13 +10,16 @@ public class FlashLightSystem : MonoBehaviour
     [SerializeField] float angleDecay = 0.01f;
     [SerializeField] float minimumAngle = 70f;
     [SerializeField] TextMeshProUGUI batteryText;
+    [SerializeField] AudioClip clickSound;
     private bool isOn;
+    private AudioSource click;
 
     Light myLight;
 
     void Start()
     {
         isOn = true;
+        click = GetComponent<AudioSource>();
         myLight = GetComponent<Light>();
     }
     void Update()
@@ -29,6 +32,7 @@ public class FlashLightSystem : MonoBehaviour
     private void ToggleFlashlight()
     {
         isOn = !isOn;
+        click.PlayOneShot(clickSound);
         if (!isOn) { myLight.enabled = false; }
         else { myLight.enabled = true; }
     }

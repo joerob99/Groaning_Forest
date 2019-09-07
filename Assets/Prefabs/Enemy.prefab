@@ -140,6 +140,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 100
+  minMoanWait: 13
+  maxMoanWait: 25
+  moan: {fileID: 8300000, guid: 4a1ceae1104fc39448cbd1c79375386e, type: 3}
+  dying: {fileID: 8300000, guid: 1ae0886d6bf1a8346a2ebc31f39cb0f1, type: 3}
+  inPain: {fileID: 8300000, guid: 9f152eae5f632964e9c22c4b9e4006bb, type: 3}
 --- !u!95 &2694252516245409255
 Animator:
   serializedVersion: 3
@@ -172,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
+  bite: {fileID: 8300000, guid: 9ea3bc5f9fca1b542a0ee9d940d661fb, type: 3}
 --- !u!82 &8991277728605055930
 AudioSource:
   m_ObjectHideFlags: 0
@@ -184,7 +190,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -193,9 +199,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 100
+  MaxDistance: 60
   Pan2D: 0
-  rolloffMode: 1
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -205,21 +211,21 @@ AudioSource:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -2.4264138
+      outSlope: -2.4264138
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0.10729613
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -0.3380629
+      outSlope: -0.3380629
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0.2644471
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

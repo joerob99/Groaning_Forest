@@ -21,11 +21,15 @@ public class Weapon : MonoBehaviour
     [SerializeField] AmmoType ammoType;
     [SerializeField] TextMeshProUGUI ammoText;
 
+    [SerializeField] AudioClip shotFired;
 
     public float shotPower = 100f;
 
+    private AudioSource source;
+
     void Start()
     {
+        source = GetComponentInParent<AudioSource>();
         if (barrelLocation == null)
             barrelLocation = transform;
     }
@@ -52,7 +56,25 @@ public class Weapon : MonoBehaviour
             ProcessRaycast();
             ShowBullet();
             ammoSlot.ReduceCurrentAmmo(ammoType);
+            PlayShootSound();
         }
+    }
+
+    private void PlayShootSound()
+    {
+        source.PlayOneShot(shotFired);
+        //switch (ammoType)
+        //{
+            //case AmmoType.PistolBullets:
+                //source.PlayOneShot(pistolShot);
+                //break;
+            //case AmmoType.RifleBullets:
+                //source.PlayOneShot(rifleShot);
+                //break;
+            //case AmmoType.ShotgunShells:
+                //source.PlayOneShot(shotgunShot);
+                //break;
+        //}
     }
 
     private void ShowBullet()
