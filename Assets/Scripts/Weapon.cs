@@ -16,6 +16,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] Camera FPCamera;
     [SerializeField] float range = 100f;
     [SerializeField] float damage = 31f;
+    [SerializeField] float waitBetweenShots = 1f;
     [SerializeField] GameObject hitEffect;
     [SerializeField] Ammo ammoSlot;
     [SerializeField] AmmoType ammoType;
@@ -26,9 +27,12 @@ public class Weapon : MonoBehaviour
     public float shotPower = 100f;
 
     private AudioSource source;
+    private bool hasShot = false;
+    private float waitLeft;
 
     void Start()
     {
+        waitLeft = waitBetweenShots;
         source = GetComponentInParent<AudioSource>();
         if (barrelLocation == null)
             barrelLocation = transform;
@@ -36,13 +40,21 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
+        if (hasShot && waitLeft > 0f) { waitLeft -= Time.deltaTime; } // This code is used to wait for a period of time between shots fired
+        else { hasShot = false; }
         DisplayAmmo();
+
         if (Input.GetMouseButtonDown(0) && ammoSlot.GetCurrentAmmo(ammoType) > 0) // If left clicked and ammo > 0, shoot
         {
-            GetComponent<Animator>().SetTrigger("Fire");
-            //Shoot();
+            if (!hasShot) // If the player has already waited the specified time or has not yet shot
+            {
+                SetTriggerFire(); // Calls shoot by tellng animation to trigger, which causes the shoot event
+                waitLeft = waitBetweenShots;
+            }
         }
     }
+
+    private void SetTriggerFire() { GetComponent<Animator>().SetTrigger("Fire"); } // String referenced
 
     private void DisplayAmmo()
     {
@@ -52,6 +64,7 @@ public class Weapon : MonoBehaviour
     void Shoot()
     {
         if (ammoSlot.GetCurrentAmmo(ammoType) > 0) {
+            hasShot = true;
             PlayMuzzleFlash();
             ProcessRaycast();
             ShowBullet();
@@ -60,22 +73,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    private void PlayShootSound()
-    {
-        source.PlayOneShot(shotFired);
-        //switch (ammoType)
-        //{
-            //case AmmoType.PistolBullets:
-                //source.PlayOneShot(pistolShot);
-                //break;
-            //case AmmoType.RifleBullets:
-                //source.PlayOneShot(rifleShot);
-                //break;
-            //case AmmoType.ShotgunShells:
-                //source.PlayOneShot(shotgunShot);
-                //break;
-        //}
-    }
+    private void PlayShootSound() { source.PlayOneShot(shotFired); }
 
     private void ShowBullet()
     {

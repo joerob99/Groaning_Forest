@@ -485,6 +485,7 @@ MonoBehaviour:
   FPCamera: {fileID: 0}
   range: 79
   damage: 24
+  waitBetweenShots: 0.05
   hitEffect: {fileID: 1398255030022564583, guid: 007792af5bee6844c9f0ee1304930779,
     type: 3}
   ammoSlot: {fileID: 0}

@@ -486,12 +486,13 @@ MonoBehaviour:
   FPCamera: {fileID: 0}
   range: 12
   damage: 63
+  waitBetweenShots: 2
   hitEffect: {fileID: 1398255030022564583, guid: 007792af5bee6844c9f0ee1304930779,
     type: 3}
   ammoSlot: {fileID: 0}
   ammoType: 2
   ammoText: {fileID: 0}
-  shotFired: {fileID: 8300000, guid: 5f7607b648188e94aba68a4f679f07bd, type: 3}
+  shotFired: {fileID: 8300000, guid: 0841817beb07e4e498d9ed3d560c13fa, type: 3}
   shotPower: 10000
 --- !u!114 &1661678417412670463
 MonoBehaviour:
