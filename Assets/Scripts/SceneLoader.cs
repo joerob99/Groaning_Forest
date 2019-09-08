@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    [SerializeField] PauseHandler pause;
+
     public void LoadGame()
     {
         ReloadGame();
@@ -23,6 +25,8 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(0);
         Time.timeScale = 0;
     }
+
+    public void TogglePauseOnAndOff() { pause.TogglePause(); }
 
     public void QuitGame()
     {

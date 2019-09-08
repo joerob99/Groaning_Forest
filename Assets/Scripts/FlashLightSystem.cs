@@ -39,7 +39,7 @@ public class FlashLightSystem : MonoBehaviour
 
     private void DisplayBattery()
     {
-        batteryText.text = ((int)((myLight.intensity / 7.5f) * 100)).ToString(); // Finds the battery % using a conversion formula and then converts to int
+        batteryText.text = ((int)((myLight.intensity / 3f) * 100)).ToString(); // Finds the battery % using a conversion formula and then converts to int
     }
 
     public void RestoreLightAngle(float restoreAngle) { myLight.spotAngle = restoreAngle; }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class BatteryPickup : MonoBehaviour
 {
     [SerializeField] float restoreAngle = 80f;
-    [SerializeField] float intensityAmount = 7.5f;
+    [SerializeField] float intensityAmount = 3f;
     [SerializeField] float rotationSpeed = 200f;
     [SerializeField] AudioClip refill;
 
