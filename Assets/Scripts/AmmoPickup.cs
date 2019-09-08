@@ -9,15 +9,11 @@ public class AmmoPickup : MonoBehaviour
     [SerializeField] AmmoType ammoType;
     [SerializeField] AudioClip reload;
 
-    private AudioSource source;
-
-    private void Start() { source = GetComponentInParent<AudioSource>(); }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            source.PlayOneShot(reload);
+            GetComponentInParent<AudioSource>().PlayOneShot(reload);
             FindObjectOfType<Ammo>().IncreaseCurrentAmmo(ammoType, ammoAmount);
             Destroy(gameObject);
         }

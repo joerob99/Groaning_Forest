@@ -9,15 +9,11 @@ public class BatteryPickup : MonoBehaviour
     [SerializeField] float rotationSpeed = 200f;
     [SerializeField] AudioClip refill;
 
-    private AudioSource source;
-
-    private void Start() { source = GetComponentInParent<AudioSource>(); }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            source.PlayOneShot(refill);
+            GetComponentInParent<AudioSource>().PlayOneShot(refill);
             FlashLightSystem current = other.GetComponentInChildren<FlashLightSystem>();
             current.RestoreLightAngle(restoreAngle);
             current.RestoreLightIntensity(intensityAmount);
