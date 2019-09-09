@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 949e254eb830b974281986cbe1b5cc77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoAmount: 10
+  ammoAmount: 16
   rotateSpeed: 200
   ammoType: 1
   reload: {fileID: 8300000, guid: 4e476d2b3a32d694cb6832b94d69241b, type: 3}

@@ -18,11 +18,17 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
+        RandomizeDirection();
         animator = GetComponent<Animator>();
         
         navMeshAgent = GetComponent<NavMeshAgent>();
         health = GetComponent<EnemyHealth>();
         target = FindObjectOfType<PlayerHealth>().transform;
+    }
+
+    private void RandomizeDirection()
+    {
+        transform.Rotate(new Vector3(transform.rotation.x, UnityEngine.Random.Range(0f, 359.9f), transform.rotation.z));
     }
 
     void Update()
